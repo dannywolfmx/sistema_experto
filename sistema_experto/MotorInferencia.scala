@@ -82,6 +82,22 @@ import scala.collection.mutable
          return null
      }
 
+     def concatena(destino:mutable.ArrayBuffer,fuente:mutable.ArrayBuffer) : Unit = {
+         var aTmp:Atomo = null
+
+         for ( aAgregar <- fuente ){
+             if ( aAgregar.instanceOf ){
+                 aTmp = new Atomo( aAgregar.asInstanceOf )
+                 destino + aTmp
+             }
+            // Ojo, aqu� es donde se niega la BC. Debes arreglarlo
+            // Parece que ya...
+            if ( aAgregar.instanceOf(Negacion) ){
+                aTmp.Estado = ! aTmp.Estado
+            }
+         }
+     }
+
      def esElegible:Boolean(r:Regla,porSatisfacer:mutable.ArrayList[Any]){
          var atomosConc = new mutable.ArrayBuffer.empty[Any]
          var aTmp:Atomo = null;
@@ -126,8 +142,54 @@ import scala.collection.mutable
              if ( !usadas[pos] ){
                  veces += 1
                  usadas[pos] = true
+                 //Eliminar los elementos del array
+                 aSatisfacer.clear
+                 bcPrima.clear
+
+                 mc.desmarcar
+                 mc.quitarDisparos
+                 
+                 for( pConc <- ( reglasObj.asInstanceOf( Regla ) ).partesCond ){
+                     
+                     if ( pConc.instanceOf(Atomo) ){
+                         
+                         var aObj = pConc.asInstanceOf(Atomo);
+
+                         if( aObj.Objetivo ){
+                             nomBCPrima = aObj.Desc.toUpperCase + "";
+                         }
+                     }
+                 }
+
+                 mcTmp = new ModuloConocimiento(nomBCPrima)
+                 //Bootstrap!!!
+                 concatena(aSatisfacer,( reglasObj.asInstanceOf( Regla ) ).partesCond){
+                     do{
+                         salir = true
+                         for (ra <- mc.bc){
+                             if ( !ra.marca && esElegible( ra,aSatisfacer ) ){
+                                 salir = false;
+                                 println( "Elegida: " + ra )
+                                 ra.marca = true;
+                                 concatena( aSatisfacer , ra.partesCond )
+                                 bcPrima(0) = ra
+                                
+                             }
+                         }
+                     }while( !salir )
+
+                     mcTmp.bc = bcPrima
+                     println( "Intentando con: \n" + mcTmp )
+                     resultado = encadenarAdelante(mcTmp,mt)
+                     if ( resultado != null ){
+                         backward = false
+                          return resultado
+                     }
+                 }
              }
-         }while()
-        
+         }while( veces < total )
+         backward =  false
+         return null
+
      }
  }
