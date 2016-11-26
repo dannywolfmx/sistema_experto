@@ -23,7 +23,7 @@
  * 
  */
 
- object Consultor{
+ object Consultar{
      def porAtomo(aa:Atomo,ra:Regla):Boolean = {
          var resp:String
          do{

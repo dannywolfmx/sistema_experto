@@ -25,5 +25,109 @@ import scala.collection.mutable
  class MotorInferencia{
      var backward:Boolean = false
 
-     
+     def encadenarAdelante(mc:ModuloConocimiento,mt:MemoriaTrabajo) : mutable.ArrayBuffer[Any] = {
+         var ra:Regla = null
+         var aa:Atomo = null
+         var resConsulta:Boolean = false
+         var resCondicion:Boolean = false
+
+         for ( elemento <- mc.bc ){
+             ra = elemento.asInstanceOf( Regla )
+
+             for ( elemCond <- ra.partesCond ){
+
+                 if ( elemCond.instanceOf( Atomo ) ){
+
+                    aa = elemCond.asInstanceOf( Atomo )
+                    aa = new Atomo( aa.Desc , aa.Estado, aa.Objetivo)
+
+                    if( !mt.presente( aa ) ){
+
+                        resConsulta = Consultar.porAtomo(aa,ra);
+                        // Verificacion de certidumbre: [0,1] elem R
+                        aa.Estado = resConsulta;
+                        try{
+
+                        }catch{
+                            case as:AtomoDuplicado => println("Se duplico el atomo: {0}",aa)
+                            // Hacer nada...
+                        }
+                    }
+                 }
+                    
+             }
+
+             resCondicion = ra.probarCondicion( mt )
+
+             if ( resCondicion ){
+                 println( "Se disparo: " + ra )
+                // Antes de llamar a ra.dispara(mt)
+				// calcular certidumbre del resultado.
+				// Deberia enviarse como otro parimetro.
+                ra.dispara( mt )
+                //println( mt )
+                resCondicion = false
+                if ( ra.esObjetivo() ) return ra.partesConc
+             }
+             else{
+                // Este es uno de los interruptores del SE
+				// Si se comenta, el experto consulta toda
+				// la BC' aunque una regla falle.
+                if ( backward ) return null
+                println( "No se disparo..." )
+                //Agregar comentarios complementarios de c#
+             }
+         }
+
+         return null
+     }
+
+     def esElegible:Boolean(r:Regla,porSatisfacer:mutable.ArrayList[Any]){
+         var atomosConc = new mutable.ArrayBuffer.empty[Any]
+         var aTmp:Atomo = null;
+
+         for ( aa <- r.partesConc){
+             
+             if ( aa.instanceOf(Atomo) ){
+                 aTmp = new Atomo (aa.asInstanceOf(Atomo))
+                 atomosConc += aTmp
+             }
+
+             if ( aa.instanceOf(Atomo) ) aTmp.Estado =! aTmp.Estado;
+         }
+
+         for ( aa <- atomosConc ){
+             if ( porSatisfacer.contains( aa ) ) return true;
+         }
+         return false;
+     }
+
+     def encadenarAtras( mc : ModuloConocimiento , mt : MemoriaTrabajo ) : mutable.ArrayBuffer = {
+         var reglasObj:mutable.ArrayBuffer[Any] = mc.filtrarObjs
+         var aSatisfacer = mutable.ArrayBuffer.empty[Any]
+         var bcPrima = mutable.ArrayBuffer.empty[Any]
+         var resultado:mutable.ArrayBuffer[Any] = null
+         
+         var nomBCPrima:String = null
+
+         var usadas = new Array[Boolean](reglasObj.Count);
+         var salir = false;
+
+         var (pos,veces,total) = (-1,0,reglasObj.Count);
+
+         var r = util.Random
+
+         backward = true;
+
+         var mcTmp:ModuloConocimiento = null;
+         do{
+             pos = r.nextInt(total)
+
+             if ( !usadas[pos] ){
+                 veces += 1
+                 usadas[pos] = true
+             }
+         }while()
+        
+     }
  }
