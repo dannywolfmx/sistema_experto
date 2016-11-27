@@ -1,31 +1,31 @@
 
 import scala.collection.mutable
-class PilaBooleand{
-    var datos:mutable.ArrayList[Any] = null
-    def this(){
-        datos = mutable.ArrayList.empty[Any]
-    }
+
+class PilaBooleana(){
+  
+    var datos = mutable.ArrayBuffer.empty[Any]
+
 
     def anula : Unit = {
         datos.clear
     }
 
-    def vacia:Boolean ={
-        datos.count == 0
+    def vacia : Boolean = {
+        datos.size == 0
     }
 
     def top:Boolean = {
-        if ( vacia ) datos(datos.count-1).asInstanceOf(Boolean) else false
+        if ( vacia ) datos(datos.size).asInstanceOf[Boolean] else false
     }
 
     def pop:Boolean = {
-        var tmp:Boolean
+        var tmp:Boolean = false
 
         if (vacia){
             return false
         }else{
-            tmp = datos(datos.count -1).asInstanceOf(Boolean)
-            datos.remove(datos.count - 1)
+            tmp = datos(datos.size -1).asInstanceOf[Boolean]
+            datos.remove(datos.size - 1)
             return tmp;
         }
     }

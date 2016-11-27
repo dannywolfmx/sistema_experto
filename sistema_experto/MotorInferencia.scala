@@ -22,7 +22,7 @@
 
 import scala.collection.mutable
 
- class MotorInferencia{
+ class MotorInferencia(){
      var backward:Boolean = false
 
      def encadenarAdelante(mc:ModuloConocimiento,mt:MemoriaTrabajo) : mutable.ArrayBuffer[Any] = {
@@ -30,15 +30,15 @@ import scala.collection.mutable
          var aa:Atomo = null
          var resConsulta:Boolean = false
          var resCondicion:Boolean = false
-
+         
          for ( elemento <- mc.bc ){
-             ra = elemento.asInstanceOf( Regla )
+             ra = elemento.asInstanceOf[ Regla ]
 
              for ( elemCond <- ra.partesCond ){
 
-                 if ( elemCond.instanceOf( Atomo ) ){
+                 if ( elemCond.isInstanceOf[ Atomo ] ){
 
-                    aa = elemCond.asInstanceOf( Atomo )
+                    aa = elemCond.asInstanceOf[ Atomo ]
                     aa = new Atomo( aa.Desc , aa.Estado, aa.Objetivo)
 
                     if( !mt.presente( aa ) ){
@@ -82,34 +82,34 @@ import scala.collection.mutable
          return null
      }
 
-     def concatena(destino:mutable.ArrayBuffer,fuente:mutable.ArrayBuffer) : Unit = {
+     def concatena(destino:mutable.ArrayBuffer[Any],fuente:mutable.ArrayBuffer[Any]) : Unit = {
          var aTmp:Atomo = null
 
          for ( aAgregar <- fuente ){
-             if ( aAgregar.instanceOf ){
-                 aTmp = new Atomo( aAgregar.asInstanceOf )
-                 destino + aTmp
+             if ( aAgregar.isInstanceOf[Atomo] ){
+                 aTmp = new Atomo( aAgregar.asInstanceOf[Atomo] )
+                 destino += aTmp
              }
             // Ojo, aqu� es donde se niega la BC. Debes arreglarlo
             // Parece que ya...
-            if ( aAgregar.instanceOf(Negacion) ){
+            if ( aAgregar.isInstanceOf[Negacion] ){
                 aTmp.Estado = ! aTmp.Estado
             }
          }
      }
 
-     def esElegible:Boolean(r:Regla,porSatisfacer:mutable.ArrayList[Any]){
-         var atomosConc = new mutable.ArrayBuffer.empty[Any]
+     def esElegible(r:Regla,porSatisfacer:mutable.ArrayBuffer[Any]):Boolean = {
+         var atomosConc = mutable.ArrayBuffer.empty[Any]
          var aTmp:Atomo = null;
 
          for ( aa <- r.partesConc){
              
-             if ( aa.instanceOf(Atomo) ){
-                 aTmp = new Atomo (aa.asInstanceOf(Atomo))
+             if ( aa.isInstanceOf[Atomo] ){
+                 aTmp = new Atomo (aa.asInstanceOf[Atomo])
                  atomosConc += aTmp
              }
 
-             if ( aa.instanceOf(Atomo) ) aTmp.Estado =! aTmp.Estado;
+             if ( aa.isInstanceOf[Atomo] ) aTmp.Estado = !aTmp.Estado;
          }
 
          for ( aa <- atomosConc ){
@@ -118,30 +118,31 @@ import scala.collection.mutable
          return false;
      }
 
-     def encadenarAtras( mc : ModuloConocimiento , mt : MemoriaTrabajo ) : mutable.ArrayBuffer = {
-         var reglasObj:mutable.ArrayBuffer[Any] = mc.filtrarObjs
+     def encadenarAtras( mc : ModuloConocimiento , mt : MemoriaTrabajo ) : mutable.ArrayBuffer[Any] = {
+         var reglasObj = mc.filtrarObjs
          var aSatisfacer = mutable.ArrayBuffer.empty[Any]
          var bcPrima = mutable.ArrayBuffer.empty[Any]
          var resultado:mutable.ArrayBuffer[Any] = null
          
          var nomBCPrima:String = null
 
-         var usadas = new Array[Boolean](reglasObj.Count);
+         var usadas = new Array[Boolean](reglasObj.size);
          var salir = false;
 
-         var (pos,veces,total) = (-1,0,reglasObj.Count);
+         var pos = -1
+         var veces = 0
+         var total  = reglasObj.size
 
          var r = util.Random
 
          backward = true;
-
+         
          var mcTmp:ModuloConocimiento = null;
          do{
              pos = r.nextInt(total)
-
-             if ( !usadas[pos] ){
+             if ( !usadas(pos) ){
                  veces += 1
-                 usadas[pos] = true
+                 usadas(pos) = true
                  //Eliminar los elementos del array
                  aSatisfacer.clear
                  bcPrima.clear
@@ -149,13 +150,12 @@ import scala.collection.mutable
                  mc.desmarcar
                  mc.quitarDisparos
                  
-                 for( pConc <- ( reglasObj.asInstanceOf( Regla ) ).partesCond ){
-                     
-                     if ( pConc.instanceOf(Atomo) ){
+                 for( pConc <- ( reglasObj(pos).asInstanceOf[ Regla ] ).partesConc ){
+                     if ( pConc.isInstanceOf[Atomo] ){
+                         var aObj = pConc.asInstanceOf[Atomo];
                          
-                         var aObj = pConc.asInstanceOf(Atomo);
-
                          if( aObj.Objetivo ){
+                           
                              nomBCPrima = aObj.Desc.toUpperCase + "";
                          }
                      }
@@ -163,16 +163,16 @@ import scala.collection.mutable
 
                  mcTmp = new ModuloConocimiento(nomBCPrima)
                  //Bootstrap!!!
-                 concatena(aSatisfacer,( reglasObj.asInstanceOf( Regla ) ).partesCond){
+                 concatena(aSatisfacer,( reglasObj(pos).asInstanceOf[ Regla ] ).partesCond);
                      do{
                          salir = true
                          for (ra <- mc.bc){
-                             if ( !ra.marca && esElegible( ra,aSatisfacer ) ){
+                             if ( !ra.asInstanceOf[Regla].marca && esElegible( ra.asInstanceOf[Regla],aSatisfacer ) ){
                                  salir = false;
                                  println( "Elegida: " + ra )
-                                 ra.marca = true;
-                                 concatena( aSatisfacer , ra.partesCond )
-                                 bcPrima(0) = ra
+                                 ra.asInstanceOf[Regla].marca = true;
+                                 concatena( aSatisfacer , ra.asInstanceOf[Regla].partesCond )
+                                 bcPrima.prepend(ra)
                                 
                              }
                          }
@@ -183,10 +183,10 @@ import scala.collection.mutable
                      resultado = encadenarAdelante(mcTmp,mt)
                      if ( resultado != null ){
                          backward = false
-                          return resultado
+                         println("Entregue resultado")
+                         return resultado
                      }
                  }
-             }
          }while( veces < total )
          backward =  false
          return null

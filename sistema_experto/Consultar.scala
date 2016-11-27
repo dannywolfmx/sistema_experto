@@ -25,17 +25,17 @@
 
  object Consultar{
      def porAtomo(aa:Atomo,ra:Regla):Boolean = {
-         var resp:String
+         var resp:String= null
          do{
 
              println("Se cumple " + aa.Desc + "? (S/N/P)"  );
              resp = scala.io.StdIn.readLine();
-             resp = resp.ToUpperCase
-
+             resp = resp.toUpperCase()
+             println(resp)
              if (resp.equals("P")){
                  println("Se intenta probar que: "+ra)
              }
         } while ( !resp.equals("S") && !resp.equals("N") )
-        resp.equals("S")
+        return resp.equals("S")
      }
  }

@@ -24,43 +24,50 @@
  */
 
 import scala.collection.mutable
+import scala.io.Source
 
  class ModuloConocimiento(){
-     var desc:String
-     var bs:mutable.ArrayBuffer[Any];
+     var desc:String = null;
+     var bc:mutable.ArrayBuffer[Any] = null;
 
      def this(desc:String){
          this()
          this.desc = desc
      }
 
-     def this(desc:String,archBC :String) : Unit = {
+     def this(desc:String,archBC : String){
          this()
          this.desc = desc;
-         bc = new mutable.ArrayBuffer.empty[Any];
+         bc = mutable.ArrayBuffer.empty[Any];
+         cargarBC(archBC)
      }
 
      def cargarBC(nomArch:String){
-         //Pendiente
+         for(line <- Source.fromFile(nomArch).getLines()){
+           bc += new Regla(line)
+         }
+         
      }
 
      override def toString() : String = {
          var retorno = "Modulo de Conocimiento: "+desc+"\n";
-         for( elemento <- bs ){
+         for( elemento <- bc ){
              retorno += ( elemento + "\n" )
          }
          retorno;
      }
 
      def filtrarObjs() : mutable.ArrayBuffer[Any] = {
-         var objs = new mutable.ArrayBuffer.empty[Any]
+         var objs = mutable.ArrayBuffer.empty[Any]
          var r:Regla = null;
 
          for( elemento <- bc ){
              r = elemento.asInstanceOf[Regla]
-             if ( r.esObjetivo ) objs.Add(r);
+             if ( r.esObjetivo ){
+               objs += r ;
+              
+             }
          }
-
          objs
      }
 
@@ -86,7 +93,7 @@ import scala.collection.mutable
          var retorno = ""
 
          for( rActual <- bc ){
-                if (rActual.disparo) retorno += (rActual+"\n") 
+                if (rActual.asInstanceOf[Regla].disparo) retorno += (rActual.asInstanceOf[Regla]+"\n") 
          }
          
          retorno

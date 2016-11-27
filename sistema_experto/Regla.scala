@@ -1,8 +1,8 @@
 import scala.collection.mutable
 
-class Regla{
-    var parteCond = new mutable.ArrayBuffer.empty[Any];
-    var parteConc = new mutable.ArrayBuffer.empty[Any];
+class Regla(){
+    var partesCond = mutable.ArrayBuffer.empty[Any];
+    var partesConc = mutable.ArrayBuffer.empty[Any];
     var marca = false
     var disparo = false
     var objetivo = false
@@ -16,13 +16,14 @@ class Regla{
         var retorno = "Si "
 
         for ( elemCond <- partesCond){
-            retorno += (elemCond + " ")
+            retorno += (elemCond.asInstanceOf[ParteRegla] + " ")
+            
         }
 
         retorno += "ENTONCES "
 
-        for ( elemCond <- partesConc){
-            retorno += (elemCond + " ")
+        for ( elemConc <- partesConc){
+            retorno += (elemConc.asInstanceOf[ParteRegla] + " ")
         }
 
         retorno
@@ -32,28 +33,28 @@ class Regla{
         var pb = new PilaBooleana()
         var verdad1 = false
         var verdad2 = false
-        aTmp:Atomo = null
-        aMt:Atomo = null
-        nTmp:Negacion = null
-        bTmp:Binario = null
+        var aTmp:Atomo = null
+        var aMT:Atomo = null
+        var nTmp:Negacion = null
+        var bTmp:Binario = null
 
-        for ( elemCond <- parteCond ){
+        for ( elemCond <- partesCond ){
 
-            if ( elemCond.instanceOf(Atomo) ){
-                aTmp = elemCond.asInstanceOf(Atomo)
+            if ( elemCond.isInstanceOf[Atomo] ){
+                aTmp = elemCond.asInstanceOf[Atomo]
                 aMT = mt.recupera(aTmp);
-
                 verdad1=aTmp.verVerdad(aMT);
+
                 pb.push(verdad1);
             }
-            else if (elemCond.instanceOf(Negacion)){
-                nTmp = elemCond.asInstanceOf(Negacion)
+            else if (elemCond.isInstanceOf[Negacion]){
+                nTmp = elemCond.asInstanceOf[Negacion]
                 verdad1 = pb.pop
                 verdad1 = !verdad1
                 pb.push(verdad1)
             }
-            else if (elemCond.instanceOf(Binario)){
-                bTmp = elemCond.asInstanceOf(Binario)
+            else if (elemCond.isInstanceOf[Binario]){
+                bTmp = elemCond.asInstanceOf[Binario]
                 verdad1 = pb.pop
                 verdad2 = pb.pop
                 pb.push(
@@ -64,29 +65,29 @@ class Regla{
         return pb.pop
     }
 
-    def disparo(mt:MemoriaTrabajo) : Boolean = {
+    def dispara(mt:MemoriaTrabajo) : Boolean = {
         var aTmp:Atomo = null;
         var llegoObj:Boolean = false
         disparo = true;
-        var atomos = new mutable.ArrayBuffer.empty[Any]
+        var atomos = mutable.ArrayBuffer.empty[Any]
 
-        for(elemCond <- partesConc){
+        for(elemConc <- partesConc){
             // El nivel de certidumbre que se reciba
             // se asigna a los �tomos conclusi�n
             // que se ingresar�n a la MT.
-            if ( elemConc.instanceOf(Atomo)){
-                aTmp = new Atomo ( elemConc.asInstanceOf(Atomo) )
-                atomo += aTmp
+            if ( elemConc.isInstanceOf[Atomo]){
+                aTmp = new Atomo ( elemConc.asInstanceOf[Atomo] )
+                atomos += aTmp
                 if ( aTmp.Objetivo ) llegoObj = true; 
             }
-            else if ( elemconc.instanceOf(Negacion)){
+            else if ( elemConc.isInstanceOf[Negacion]){
                 aTmp.Estado = !aTmp.Estado
             }
         }
 
         for (aa <- atomos){
             try{
-                mt.guardaAtomo(aa)
+                mt.guardaAtomo(aa.asInstanceOf[Atomo])
             }catch{
                 case ad:AtomoDuplicado => println("Se duplico el atomo: "+aa)
             }
@@ -99,13 +100,12 @@ class Regla{
     }
 
     def analiza(r:String):Unit = {
-        var partes = r.split("")
-        var regla:Boolean = _
-        var cond:Boolean = _
-        var conc:Boolean = _
-        var atomo:Boolean = _
-        var obj:Boolean = _
-
+        var partes = r.split(" ")
+        var regla:Boolean = false
+        var cond:Boolean = false
+        var conc:Boolean = false
+        var atomo:Boolean = false
+        var obj:Boolean = false
         for( parte <- partes){
                 parte match{
                     case "<atomo>" =>{
@@ -118,7 +118,8 @@ class Regla{
                     }
                     case "<atomoObj>" =>{
                         atomo = true
-                        obj = false
+                        obj = true
+                        objetivo = true;
                     }
                     case "</atomoObj>" =>{
                         atomo = false
@@ -138,7 +139,7 @@ class Regla{
                     }
                     // Etiquetas sencillas
                     case "<negacion/>" =>{
-                        pr = new Negacion()
+                        var pr = new Negacion()
                         if ( cond && !conc ){
                             partesCond += pr
                         }
@@ -148,7 +149,7 @@ class Regla{
                     }
 
                     case "<conjuncion/>" =>{
-                        pr = new Binario(true)
+                        var pr = new Binario(true)
                         if ( cond && !conc ){
                             partesCond += pr
                         }
@@ -157,12 +158,12 @@ class Regla{
                         }
                     }
                     case "<disyuncion/>" =>{
-                        pr=new Binario(false)
+                        var pr=new Binario(false)
                         if ( cond && !conc) partesCond += pr
                     }
                     case _ =>{
                         if(atomo){
-                            pr = new Atomo(parte,true,obj)
+                            var pr = new Atomo(parte,true,obj)
                             if (cond && !conc && !obj){
                                 partesCond += pr
                             }

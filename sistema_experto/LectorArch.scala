@@ -7,8 +7,8 @@ class LectorArch{
         sr = Source.fromFile(nomArch)
     }
 
-    def leeCad:String ={
-        sr.getLines
+    def leeCad {
+       // sr.
     }
 
     def cierra:Unit={

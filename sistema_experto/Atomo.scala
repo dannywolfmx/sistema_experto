@@ -23,32 +23,44 @@
 
 
 
-class Atomo(desc:String, estado:Boolean, objetivo:Boolean,otro:Atomo) extends ParteRegla {
-    desc = desc.ToLowerCase
-    estado = estado && true;
-    objetivo = objetivo && true;
-
+class Atomo extends ParteRegla {
+    var desc:String = null;
+    var estado:Boolean = false;
+    var objetivo:Boolean = false;
+    
+    def this(desc:String, estado:Boolean, objetivo:Boolean){
+      this()
+      this.desc = desc.toUpperCase()
+      this.estado = (estado && true);
+      this.objetivo = objetivo && true;
+    }
+   
     def this(otro:Atomo){
-        desc = 
-        estado = otro.Estado&&true
-        objetivo = otro.Objetivo&&true
+        this()
+        this.desc = new String(otro.Desc)
+        this.estado = otro.Estado&&true
+        this.objetivo = otro.Objetivo&&true
     }   
     
 
     //Getter para Desc
     def Desc = desc
     //Setter para Desc
-    def Desc_=(value):Unit = desc = value
+    def Desc_=(value:String):Unit ={ this.desc = value}
 
     //Getter para Estado
-    def Estado = desc
+    def Estado = estado
     //Setter para Estado
-    def Estado_=(value):Unit = estado = value
+    def Estado_=(value:Boolean):Unit = this.estado = value
 
     //Getter para Estado
-    def Objetivo = desc
+    def Objetivo:Boolean = {
+      return objetivo
+    }
     //Setter para Estado
-    def Objetivo_ = (value) : Unit = objetivo = value
+    def Objetivo_=(value:Boolean) : Unit = {
+      this.objetivo = value
+    }
 
     def verIgualdad(aTmp:Atomo) : Boolean = {
         desc.equals( aTmp.Desc ) /*&&(estado==aTmp.Estado)*/ ; 
@@ -56,9 +68,11 @@ class Atomo(desc:String, estado:Boolean, objetivo:Boolean,otro:Atomo) extends Pa
 
     def verVerdad ( aTmp:Atomo ) : Boolean = {
         
-        if ( aTmp == null ) false;
-
-        estado && aTmp.Estado;
+        if ( aTmp == null ) {
+          return false;
+        }else{
+          return (estado && aTmp.Estado)
+        }
         
     }
 
@@ -74,9 +88,9 @@ class Atomo(desc:String, estado:Boolean, objetivo:Boolean,otro:Atomo) extends Pa
      	desc.hashCode() ^ ( if (estado) 1 else 0 ) ^ ( if (objetivo) 1 else 0 )
     }
 
-    //Implmenetacion de Equals
-    override def equals(obj:Any){
-        Atomo aTmp = obj.asInstanceOf[Atomo]
+    //Implemenetacion de Equals
+    override def equals(obj:Any):Boolean ={
+        var aTmp:Atomo  = obj.asInstanceOf[Atomo]
         desc.equals( aTmp.Desc ) && ( estado == aTmp.Estado );
     } 
 

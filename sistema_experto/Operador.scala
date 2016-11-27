@@ -26,11 +26,13 @@ class Operador() extends ParteRegla{
 }
 
 class Negacion() extends Operador{
-
+  override def toString:String = {
+    return "!"
+  }
 }
 
 class Binario() extends Operador{
-        conj:Boolean
+        var conj:Boolean = false
         // Las instancias en creadas con "true" representan una
         // conjunci�n, con "false" representan una disyunci�n.
         def this(conj:Boolean){
@@ -38,7 +40,11 @@ class Binario() extends Operador{
             this.conj = conj
         }
 
-        override def toString{
-            if ( conj ) "&" else "|"
+        override def toString:String = {
+            if ( conj ){
+              return "&"
+            } else {
+              return "|"
+            }
         }
  }

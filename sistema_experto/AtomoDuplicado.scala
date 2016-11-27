@@ -16,7 +16,6 @@
  * Hora: 05:44 p.m.
  * 
  */
+case class AtomoDuplicado(s:String) extends Exception(s){
 
-class AtomoDuplicado extends Exception{
-		public AtomoDuplicado(string desc):base("Atomo Duplicado: "+desc){}
 }

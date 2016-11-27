@@ -26,43 +26,45 @@
  //Importar Paquetes de coleccion mutable
 import scala.collection.mutable
 
-class MemoriaTrabajo(afirmados:mutable.ArrayBuffer[Any],negados:mutable.ArrayBuffer[Any]){
+class MemoriaTrabajo(){
+    var afirmados = mutable.ArrayBuffer.empty[Any] 
+    var negados = mutable.ArrayBuffer.empty[Any]
     
     //Guardar los atomos
-    def guardaAtomo( Atomo aa ) : Unit = {
-        if ( !afirmados( aa ) && negados( aa ) ){
-            if ( aa.Estado ) afirmados += aa else negado += aa
+    def guardaAtomo( aa:Atomo  ) : Unit = {
+        if ( !afirmados.contains( aa ) && negados.contains( aa ) ){
+            if ( aa.Estado ) afirmados += aa else negados += aa
         } 
         else {
             throw new AtomoDuplicado( aa.Desc );
         }
     }
 
-    def presente( Atomo aa ):Boolean ={
-        Atomo aTmp = new Atomo( aa );
+    def presente( aa:Atomo  ):Boolean ={
+        var aTmp:Atomo  = new Atomo( aa );
         aTmp.Estado = !aTmp.Estado;
 
         ( afirmados.contains( aa ) || negados.contains( aa ) ||
 			        afirmados.contains( aTmp ) || negados.contains( aTmp ) )   
     }
 
-    def fueAfirmado( Atomo aa ) : Boolean = afirmados.contains(aa) 
+    def fueAfirmado( aa:Atomo  ) : Boolean = afirmados.contains(aa) 
 
-    def fueNegado( Atomo aa ) : Boolean =  negados.contains(aa) 
+    def fueNegado( aa:Atomo  ) : Boolean =  negados.contains(aa) 
 
-    def recupera( Atomo aa ) : Atomo {
+    def recupera( aa:Atomo  ) : Atomo ={ 
         
-        var pa:Int = afirmados.indexOf( aa );
-        var pn:Int = negados.indexOf( aa );
+        var pa = afirmados.indexOf( aa );
+        var pn = negados.indexOf( aa );
 
-        if ( pa > -1 ) return afirmados( pa ).asInstanceOf( Atomo );
+        if ( pa > -1 ) return afirmados(pa).asInstanceOf[ Atomo ];
         
-        if ( pn > -1 ) return negados( pn ).asInstanceOf( Atomo );
+        if ( pn > -1 ) return negados( pn ).asInstanceOf[ Atomo ];
 
         return null;
     }
 
-    override toString() : String = {
+    override def toString() : String = {
         var retorno:String = "\nMemoria de Trabajo\nAfirmados: [ ";
        
         for( a <- afirmados ) { retorno += (a+" ")  }
@@ -70,6 +72,8 @@ class MemoriaTrabajo(afirmados:mutable.ArrayBuffer[Any],negados:mutable.ArrayBuf
 
         for( a <- negados ) { retorno += (a+" ")  }
         retorno += "]"
+        
+        retorno
     }
 
 }
