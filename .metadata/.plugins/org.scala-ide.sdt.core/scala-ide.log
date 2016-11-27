@@ -245,3 +245,1327 @@ Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
 	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
 	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
 	... 160 more
+2016-11-26 15:14:23,135 ERROR [main] - Statistics - Statistics file `/home/daniel/.scalaide/statistics` is corrupted. A new one is being created. Corrupted content was:
+
+com.cedarsoftware.util.io.JsonIoException: error parsing JSON value
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:529)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:289)
+	at com.cedarsoftware.util.io.JsonReader.jsonToJava(JsonReader.java:262)
+	at org.scalaide.core.internal.statistics.Statistics.org$scalaide$core$internal$statistics$Statistics$$read(Statistics.scala:74)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:52)
+	at org.scalaide.core.internal.statistics.Statistics$$anonfun$readStats$1.apply(Statistics.scala:51)
+	at org.scalaide.core.ScalaIdeDataStore$$anonfun$validate$2.apply(ScalaIdeDataStore.scala:59)
+	at org.scalaide.util.eclipse.EclipseUtils$$anon$3.run(EclipseUtils.scala:214)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.scalaide.util.eclipse.EclipseUtils$.withSafeRunner(EclipseUtils.scala:210)
+	at org.scalaide.core.ScalaIdeDataStore$.validate(ScalaIdeDataStore.scala:58)
+	at org.scalaide.core.internal.statistics.Statistics.readStats(Statistics.scala:51)
+	at org.scalaide.core.internal.statistics.Statistics.<init>(Statistics.scala:30)
+	at org.scalaide.core.internal.ScalaPlugin.stats$lzycompute(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.stats(ScalaPlugin.scala:135)
+	at org.scalaide.core.internal.ScalaPlugin.statistics(ScalaPlugin.scala:138)
+	at org.scalaide.core.internal.ScalaPlugin.start(ScalaPlugin.scala:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:581)
+	at org.eclipse.osgi.container.Module.start(Module.java:449)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.jdt.internal.ui.filters.FilterDescriptor$1.run(FilterDescriptor.java:135)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.filters.FilterDescriptor.createViewerFilter(FilterDescriptor.java:139)
+	at org.eclipse.jdt.ui.actions.CustomFiltersActionGroup$FilterItem.getFilterInstance(CustomFiltersActionGroup.java:187)
+	at org.eclipse.jdt.ui.actions.CustomFiltersActionGroup.updateViewerFilters(CustomFiltersActionGroup.java:517)
+	at org.eclipse.jdt.ui.actions.CustomFiltersActionGroup.<init>(CustomFiltersActionGroup.java:275)
+	at org.eclipse.jdt.ui.actions.CustomFiltersActionGroup.<init>(CustomFiltersActionGroup.java:241)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerActionGroup.<init>(PackageExplorerActionGroup.java:149)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.makeActions(PackageExplorerPart.java:800)
+	at org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.createPartControl(PackageExplorerPart.java:506)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:150)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:143)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:340)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:55)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:966)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:931)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:151)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:375)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:294)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:162)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:105)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:74)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:56)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:975)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:536)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:520)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:70)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:975)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:651)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1317)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:669)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:70)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:142)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:70)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:142)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:70)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:49)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:103)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:63)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:669)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:70)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:142)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:70)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:725)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:665)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:757)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:728)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:722)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:706)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1059)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1022)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:150)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:687)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:604)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:138)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
+Caused by: com.cedarsoftware.util.io.JsonIoException: EOF reached prematurely
+	at com.cedarsoftware.util.io.JsonParser.error(JsonParser.java:584)
+	at com.cedarsoftware.util.io.JsonParser.readValue(JsonParser.java:278)
+	at com.cedarsoftware.util.io.JsonReader.readObject(JsonReader.java:521)
+	... 160 more
+2016-11-26 15:16:49,722 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.launching.JavaRuntime
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 15:17:07,917  WARN [ModalContext] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:17:07,928  WARN [ModalContext] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:17:10,401  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:17:10,402  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:17:28,426 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.debug.core.IJavaLineBreakpoint
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 15:18:17,458 ERROR [Worker-11] - System.err - [org.eclipse.jdt.debug.ui] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.debug.ui.launchConfigurations.JavaAppletLaunchShortcut
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 15:18:22,195  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:18:22,195  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:18:22,794  WARN [Java indexing] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:18:22,794  WARN [Java indexing] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:18:37,327 ERROR [main] - System.err - [org.eclipse.jdt.junit] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.internal.junit.ui.JUnitQuickFixProcessor
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 15:18:58,434 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 15:18:58,435 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 15:18:58,436 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 15:19:01,295  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:19:01,295  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:19:30,460  WARN [Worker-11] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:19:30,460  WARN [Worker-11] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:20:22,035  WARN [Worker-11] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:20:22,036  WARN [Worker-11] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:20:25,571  WARN [Worker-11] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:20:25,571  WARN [Worker-11] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:21:10,755  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:21:10,757  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:21:32,533 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [885:883]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:21:45,304 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [884:882]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:22:09,734  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:22:09,735  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:22:26,862  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:22:26,862  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:23:04,899  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:23:04,899  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:24:12,659  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:24:12,660  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:24:23,852  WARN [Worker-11] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:24:23,853  WARN [Worker-11] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:24:29,960  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:24:29,961  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:24:47,048  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:24:47,048  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:24:59,380  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:24:59,380  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:25:03,540  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:25:03,540  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:25:12,836  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:25:12,836  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:25:47,252  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:25:47,253  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:27:09,340  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:27:09,341  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:27:24,306  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:27:24,307  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:27:31,206  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:27:31,207  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:27:42,691  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:27:42,691  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:28:25,928  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:28:25,929  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:28:59,395  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:28:59,396  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:29:29,422  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:29:29,422  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:29:38,240  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:29:38,240  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:29:43,067  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:29:43,068  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:29:43,201 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1967)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.nameString(EnrichedTrees.scala:355)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:255)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:30:16,761 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1967)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.nameString(EnrichedTrees.scala:355)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:255)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:31:05,662 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1967)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.nameString(EnrichedTrees.scala:355)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:255)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:31:26,530  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:31:26,531  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:31:45,832  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:31:45,832  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:31:55,039  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:31:55,039  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:32:02,155  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:32:02,156  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:32:27,619  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:32:27,624  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:01,467  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:34:01,468  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:10,018  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:34:10,018  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:14,585  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:34:14,586  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:30,528  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:34:30,529  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:32,519  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:34:32,520  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:34:41,589 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1126:1122]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:34:50,365 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1127:1123]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 15:35:13,266  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:35:13,266  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:35:20,100  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:35:20,106  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:35:58,754  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:35:58,754  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:40:16,478  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:40:16,478  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:40:28,640  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:40:28,644  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:41:09,099  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:41:09,100  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:42:27,950  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:42:27,951  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:42:40,567  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:42:40,568  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:43:04,557  WARN [Worker-16] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:43:04,557  WARN [Worker-16] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:43:31,953  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:43:31,953  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:43:46,590  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:43:46,590  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:43:49,310  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:43:49,310  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:44:14,329  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:44:14,329  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:46:20,440  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:46:20,440  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:46:27,692  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:46:27,693  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:46:40,388  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:46:40,393  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:46:45,305  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:46:45,306  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:48:05,240  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:48:05,240  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:48:19,941  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:48:19,941  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:48:22,799  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:48:22,799  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:48:41,407  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:48:41,409  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:49:04,808  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:49:04,808  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:49:21,694  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:49:21,694  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:49:35,981  WARN [Worker-18] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:49:35,982  WARN [Worker-18] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:17,507  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:17,508  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:22,028  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:22,029  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:30,866  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:30,866  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:45,976  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:45,977  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:50,050  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:50,050  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:51:52,994  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:51:52,995  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:52:15,684  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:52:15,684  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:54:23,336  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:54:23,337  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:54:29,932  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:54:29,932  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:54:57,674  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:54:57,675  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:55:06,814  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:55:06,814  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:57:37,361  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:57:37,361  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:58:17,757  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:58:17,760  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:58:28,241  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:58:28,243  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:58:45,574  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:58:45,575  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:58:59,593  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:58:59,594  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:59:03,342  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:59:03,342  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 15:59:06,671  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 15:59:06,671  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:00:24,327  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:00:24,327  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:00:30,332  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:00:30,333  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:00:44,964  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:00:44,964  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:01:30,317  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:01:30,317  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:14,016 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:14,017 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:14,017 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:14,589  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:14,589  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:19,772 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1228:1223]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.Global.checkForMoreWork(Global.scala:520)
+	at scala.tools.nsc.interactive.Global.signalDone(Global.scala:361)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5418)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5466)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedLhs$1(Typers.scala:4210)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedAssign$1(Typers.scala:4211)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5324)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5353)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedBlock(Typers.scala:2381)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5317)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5353)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5463)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedFunction(Typers.scala:2988)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedFunction$1$1.apply(Typers.scala:5284)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedFunction$1$1.apply(Typers.scala:5284)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedFunction$1(Typers.scala:5284)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5321)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5353)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$normalTypedApply$1$1$$anonfun$apply$49.apply(Typers.scala:4551)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$normalTypedApply$1$1.apply(Typers.scala:4551)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$normalTypedApply$1$1.apply(Typers.scala:4548)
+	at scala.tools.nsc.typechecker.Typers$Typer.onError$3(Typers.scala:4522)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:4548)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:4580)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5343)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedBlock(Typers.scala:2381)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5317)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5353)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.transformedOrTyped(Typers.scala:5605)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedDefDef(Typers.scala:2208)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5308)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:1921)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedClassDef(Typers.scala:1762)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5309)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5015)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5312)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5448)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$$anon$3.apply(Analyzer.scala:102)
+	at scala.tools.nsc.Global$GlobalPhase$$anonfun$applyPhase$1.apply$mcV$sp(Global.scala:440)
+	at scala.tools.nsc.Global$GlobalPhase.withCurrentUnit(Global.scala:431)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:440)
+	at scala.tools.nsc.interactive.Global$TyperRun$$anonfun$applyPhase$1.apply(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global$TyperRun$$anonfun$applyPhase$1.apply(Global.scala:1338)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1331)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:670)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5$$anonfun$apply$8.apply(Global.scala:585)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5.apply(Global.scala:581)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5.apply(Global.scala:581)
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732)
+	at scala.tools.nsc.interactive.Global.backgroundCompile(Global.scala:581)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:25)
+2016-11-26 16:04:20,748 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1228:1223]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 16:04:23,306  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:23,306  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:23,460 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1228:1223]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 16:04:30,909 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Unexptected error - most likely due to an illegal position
+java.lang.AssertionError: assertion failed: bad position: [1229:1224]
+	at scala.reflect.internal.util.Position$.validate(Position.scala:34)
+	at scala.reflect.internal.util.Position$.range(Position.scala:51)
+	at scala.reflect.internal.util.InternalPositionImpl$class.copyRange(Position.scala:205)
+	at scala.reflect.internal.util.InternalPositionImpl$class.withStart(Position.scala:124)
+	at scala.reflect.internal.util.Position.withStart(Position.scala:12)
+	at scala.tools.refactoring.common.EnrichedTrees$TreeMethodsForPositions.namePosition(EnrichedTrees.scala:268)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at org.scalaide.core.internal.decorators.semantichighlighting.classifier.SafeSymbol$$anonfun$8.apply(SafeSymbol.scala:138)
+	at scala.tools.nsc.util.InterruptReq.execute(InterruptReq.scala:26)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:457)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:22)
+2016-11-26 16:04:31,885  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:31,885  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:37,163  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:37,163  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:41,190  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:41,193  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:45,989  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:45,990  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:46,472 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:46,473 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:46,473 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:04:51,426  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:51,426  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:04:55,922  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:04:55,922  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:05:06,593  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:05:06,594  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:05:43,275  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 2374
+2016-11-26 16:05:43,276  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 2374
+2016-11-26 16:05:46,724  WARN [Worker-1] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:05:46,724  WARN [Worker-1] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:09:01,607  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:09:01,607  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:09:13,507  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:09:13,507  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:09:43,214  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:09:43,214  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:10:38,606  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:10:38,606  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:10:58,914  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:10:58,915  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:11:07,427  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:11:07,427  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:11:33,490  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:11:33,491  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:11:38,509  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:11:38,511  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:11:57,045  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:11:57,046  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:11:58,775  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:11:58,775  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:14:26,075  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:14:26,075  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:14:32,288  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:14:32,288  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:15:58,761  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:15:58,761  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:16:27,114  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:16:27,114  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:16:31,965  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:16:31,966  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:16:44,601  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:16:44,601  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:16:59,666  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:16:59,666  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:17:25,692  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:17:25,692  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:17:36,747  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:17:36,748  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:17:59,130  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:17:59,130  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:18:08,887  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:18:08,888  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:18:24,943  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:18:24,944  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:18:31,471  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:18:31,471  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:18:50,853  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:18:50,853  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:09,438  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:09,438  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:24,142  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:24,142  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:28,190  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:28,191  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:32,459  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:32,464  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:36,356  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:36,356  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:19:57,492  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:19:57,492  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:09,632  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:09,632  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:15,356  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:15,357  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:21,516  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:21,517  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:34,451  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:34,451  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:47,058  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:47,059  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:54,181  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:54,181  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:20:58,619  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:20:58,620  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:21:04,202  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:21:04,202  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:21:09,590  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:21:09,591  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:21:16,597  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:21:16,598  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:21:36,215 ERROR [main] - org.scala-ide.sdt.core - org.scala-ide.sdt.core - org.scala-ide.sdt.core - 0 - Throwable during asyncExec
+java.util.NoSuchElementException: key not found: /home/daniel/programacion/scala/expertoDebuug/src/PilaBooleana.scala
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:59)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.tools.nsc.interactive.Global$$anon$4.scala$collection$mutable$SynchronizedMap$$super$apply(Global.scala:176)
+	at scala.collection.mutable.SynchronizedMap$class.apply(SynchronizedMap.scala:48)
+	at scala.tools.nsc.interactive.Global$$anon$4.apply(Global.scala:176)
+	at scala.tools.nsc.interactive.Global$$anonfun$14.apply(Global.scala:852)
+	at scala.tools.nsc.interactive.Global$$anonfun$14.apply(Global.scala:852)
+	at scala.tools.nsc.interactive.Global$$anonfun$getDocComment$2$$anonfun$apply$16.apply(Global.scala:951)
+	at scala.tools.nsc.interactive.Global$$anonfun$getDocComment$2$$anonfun$apply$16.apply(Global.scala:946)
+	at scala.tools.nsc.interactive.Global.scala$tools$nsc$interactive$Global$$withTempUnits(Global.scala:855)
+	at scala.tools.nsc.interactive.Global$$anonfun$getDocComment$2.apply(Global.scala:946)
+	at scala.tools.nsc.interactive.Global$$anonfun$getDocComment$2.apply(Global.scala:946)
+	at scala.tools.nsc.interactive.Global$$anonfun$respond$1.apply(Global.scala:701)
+	at scala.tools.nsc.interactive.Global$$anonfun$respond$1.apply(Global.scala:701)
+	at scala.tools.nsc.interactive.Global.respondGradually(Global.scala:708)
+	at scala.tools.nsc.interactive.Global.respond(Global.scala:701)
+	at scala.tools.nsc.interactive.Global.getDocComment(Global.scala:945)
+	at scala.tools.nsc.interactive.CompilerControl$AskDocCommentItem.apply$mcV$sp(CompilerControl.scala:383)
+	at scala.tools.nsc.interactive.Global$$anonfun$pollForWork$1.apply$mcV$sp(Global.scala:506)
+	at scala.util.control.Breaks.breakable(Breaks.scala:38)
+	at scala.tools.nsc.interactive.Global.pollForWork(Global.scala:431)
+	at scala.tools.nsc.interactive.Global.checkForMoreWork(Global.scala:520)
+	at scala.tools.nsc.interactive.Global.signalDone(Global.scala:361)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5418)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedType(Typers.scala:5517)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedType(Typers.scala:5520)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedValDefImpl(Typers.scala:1967)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedValDef(Typers.scala:1958)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5306)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedBlock(Typers.scala:2381)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$typedOutsidePatternMode$1$1.apply(Typers.scala:5318)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5317)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedInAnyMode$1(Typers.scala:5353)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5360)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.transformedOrTyped(Typers.scala:5605)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedDefDef(Typers.scala:2208)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5308)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:1921)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedClassDef(Typers.scala:1762)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5309)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedByValueExpr(Typers.scala:5452)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedStat$1(Typers.scala:3047)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer$$anonfun$65.apply(Typers.scala:3151)
+	at scala.collection.immutable.List.loop$1(List.scala:173)
+	at scala.collection.immutable.List.mapConserve(List.scala:189)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3151)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5015)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedMemberDef$1(Typers.scala:5312)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5359)
+	at scala.tools.nsc.typechecker.Typers$Typer.runTyper$1(Typers.scala:5396)
+	at scala.tools.nsc.typechecker.Typers$Typer.scala$tools$nsc$typechecker$Typers$Typer$$typedInternal(Typers.scala:5423)
+	at scala.tools.nsc.typechecker.Typers$Typer.body$2(Typers.scala:5370)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5374)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:5448)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$$anon$3.apply(Analyzer.scala:102)
+	at scala.tools.nsc.Global$GlobalPhase$$anonfun$applyPhase$1.apply$mcV$sp(Global.scala:440)
+	at scala.tools.nsc.Global$GlobalPhase.withCurrentUnit(Global.scala:431)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:440)
+	at scala.tools.nsc.interactive.Global$TyperRun$$anonfun$applyPhase$1.apply(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global$TyperRun$$anonfun$applyPhase$1.apply(Global.scala:1338)
+	at scala.reflect.internal.SymbolTable.enteringPhase(SymbolTable.scala:235)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1338)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1331)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:670)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5$$anonfun$apply$8.apply(Global.scala:585)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5.apply(Global.scala:581)
+	at scala.tools.nsc.interactive.Global$$anonfun$backgroundCompile$5.apply(Global.scala:581)
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732)
+	at scala.tools.nsc.interactive.Global.backgroundCompile(Global.scala:581)
+	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:25)
+2016-11-26 16:21:39,870  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:21:39,870  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:21:48,383  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:21:48,384  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:00,717  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:00,718  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:11,356  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:11,357  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:17,973  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:17,973  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:23,322  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:23,323  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:30,659 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:22:30,660 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:22:30,661 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 16:22:31,123  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:31,124  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:22:45,153  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:22:45,154  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:23:00,549  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:23:00,549  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:23:24,183  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:23:24,184  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:23:40,051  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:23:40,052  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:23:46,796  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:23:46,797  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:23:54,626  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:23:54,627  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:01,593  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:01,593  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:10,668  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:10,668  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:17,443  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:17,444  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:24,812  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:24,812  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:43,072  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:43,072  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:24:54,323  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:24:54,323  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:03,582  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:03,583  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:06,194  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:06,194  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:17,054  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:17,054  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:23,974  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:23,974  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:32,302  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:32,302  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:44,710  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:44,712  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:50,265  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:50,266  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:25:58,435  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:25:58,436  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:26:06,742  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:26:06,742  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:26:45,371  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:26:45,371  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:27:20,639  WARN [Worker-12] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:27:20,640  WARN [Worker-12] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:27:38,452  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:27:38,453  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:27:44,093  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:27:44,094  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:27:48,757  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:27:48,761  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:28:03,915  WARN [Worker-23] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:28:03,916  WARN [Worker-23] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:28:29,324  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:28:29,325  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:30:43,184  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 542
+2016-11-26 16:30:43,186  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 542
+2016-11-26 16:30:51,271  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:30:51,271  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:30:56,998  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:30:56,998  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:31:08,871  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:31:08,871  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:31:19,522  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:31:19,522  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:31:46,360  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:31:46,360  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:16,554  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:16,555  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:19,315  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:19,316  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:21,820  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:21,820  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:30,299  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:30,299  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:33,224  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:33,224  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:32:54,855  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:32:54,856  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 16:33:08,955  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 16:33:08,955  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:37:31,952 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.launching.JavaRuntime
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 18:37:34,935  WARN [Worker-8] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:37:34,943  WARN [Worker-8] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:37:46,083  WARN [main] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:37:46,087  WARN [main] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:37:53,321 ERROR [main] - System.err - [org.eclipse.jdt.debug.ui] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.internal.debug.ui.actions.ToggleBreakpointAdapter
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 18:37:53,552 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.debug.core.IJavaHotCodeReplaceListener
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 18:37:58,808 ERROR [main] - System.err - [org.eclipse.jdt.junit] error can't determine modifiers of missing type org.eclipse.pde.internal.ui.wizards.imports.PluginImportHelper
+when weaving type org.eclipse.jdt.internal.junit.ui.JUnitQuickFixProcessor
+when weaving classes 
+when weaving 
+ [Xlint:cantFindType]
+2016-11-26 18:38:00,333 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 18:38:00,334 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 18:38:00,335 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 18:38:17,618  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:38:17,621  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:38:17,782  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:38:17,782  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:39:18,980  WARN [Worker-6] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:39:18,981  WARN [Worker-6] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:39:20,669 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 18:39:57,988  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:39:57,989  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:40:15,049  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:40:15,050  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:40:46,531  WARN [Worker-11] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:40:46,532  WARN [Worker-11] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:40:51,256  WARN [Worker-9] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:40:51,259  WARN [Worker-9] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:42:19,539  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:42:19,539  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:42:25,731  WARN [Worker-9] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:42:25,732  WARN [Worker-9] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:43:35,767  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 1342
+2016-11-26 18:43:36,829  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 1342
+2016-11-26 18:43:38,171  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 1343
+2016-11-26 18:43:42,090  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 1349
+2016-11-26 18:43:42,096  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 1349
+2016-11-26 18:43:46,200  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:43:46,200  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:44:05,866  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:44:05,867  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:45:56,123  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:45:56,123  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:46:07,794  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during semantic highlighting.
+2016-11-26 18:46:24,142  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:46:24,142  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:47:04,379  WARN [Worker-4] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:47:04,380  WARN [Worker-4] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:47:21,212  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:47:21,212  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:47:45,261  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:47:45,263  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:48:41,099  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:48:41,099  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:48:59,253  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:48:59,253  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:49:10,520  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:49:10,520  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:49:12,312  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:49:12,315  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:49:15,595  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:49:15,596  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:49:42,457  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:49:42,458  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:49:49,330  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:49:49,331  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:50:16,034  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:50:16,035  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:50:44,670  WARN [Worker-7] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:50:44,671  WARN [Worker-7] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:50:56,416  WARN [Worker-7] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:50:56,417  WARN [Worker-7] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:51:40,155  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:51:40,160  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:51:50,731  WARN [Worker-3] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:51:50,732  WARN [Worker-3] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:52:21,334  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:52:21,334  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:52:36,147  WARN [Worker-2] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:52:36,149  WARN [Worker-2] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:52:52,699  WARN [Worker-0] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:52:52,699  WARN [Worker-0] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:53:28,713  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 476
+2016-11-26 18:53:29,795  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 477
+2016-11-26 18:53:31,887  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 479
+2016-11-26 18:53:34,903  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 472
+2016-11-26 18:54:12,447  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:54:12,448  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:54:59,494  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:54:59,494  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:55:39,434  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:55:39,435  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:55:45,436  WARN [Worker-4] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:55:45,436  WARN [Worker-4] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:56:23,898  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 4384
+2016-11-26 18:56:23,900  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 4393
+2016-11-26 18:56:36,161  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 4656
+2016-11-26 18:56:41,605  WARN [org.scalaide.ui.internal.reconciliation.ScalaReconciler] - TraverserImpl$ - Skipping annotation, position length = 0, position offset = 4661
+2016-11-26 18:56:50,354  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:56:50,355  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:57:43,986  WARN [Worker-4] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:57:43,987  WARN [Worker-4] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 18:58:30,859  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 18:58:30,859  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:00:18,507  WARN [Worker-9] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:00:18,507  WARN [Worker-9] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:02:02,684  WARN [Worker-7] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:02:02,687  WARN [Worker-7] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:02:07,353  WARN [Worker-9] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:02:07,354  WARN [Worker-9] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:03:24,457  WARN [Worker-14] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:03:24,457  WARN [Worker-14] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:03:59,553  WARN [Worker-7] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:03:59,554  WARN [Worker-7] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:04:23,412  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:04:23,412  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:05:43,785  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:05:43,786  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:11:33,883  WARN [Worker-18] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:11:33,884  WARN [Worker-18] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:11:53,608  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:11:53,611  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:12:41,418  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:12:41,418  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:12:50,525  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:12:50,525  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:13:10,810  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:13:10,810  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:14:23,113  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:14:23,114  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:15:05,072  WARN [Worker-22] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:15:05,072  WARN [Worker-22] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:15:35,836  WARN [Worker-21] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:15:35,836  WARN [Worker-21] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:16:21,542  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:16:21,542  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:16:42,313  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:16:42,314  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:17:02,149  WARN [Worker-19] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:17:02,149  WARN [Worker-19] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:19:19,614  WARN [Worker-15] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:19:19,614  WARN [Worker-15] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:20:26,331  WARN [Worker-24] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:20:26,331  WARN [Worker-24] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:20:34,398  WARN [Worker-20] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:20:34,400  WARN [Worker-20] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:22:04,439  WARN [Worker-18] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:22:04,439  WARN [Worker-18] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:22:12,399  WARN [Worker-18] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:22:12,400  WARN [Worker-18] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:22:15,817  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:22:15,819  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:24:20,900  WARN [Worker-26] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:24:20,900  WARN [Worker-26] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:24:49,134  WARN [Worker-26] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:24:49,135  WARN [Worker-26] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:25:26,472  WARN [Worker-31] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:25:26,480  WARN [Worker-31] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:25:33,300  WARN [Worker-28] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:25:33,300  WARN [Worker-28] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:30:47,880  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:30:47,880  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:31:03,146  WARN [Worker-33] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:31:03,146  WARN [Worker-33] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:31:15,053  WARN [Worker-28] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:31:15,053  WARN [Worker-28] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:31:31,541  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:31:31,541  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:32:15,013  WARN [Worker-33] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:32:15,013  WARN [Worker-33] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:33:52,917  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:33:52,917  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:34:40,507  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:34:40,507  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:35:11,614  WARN [Worker-39] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:35:11,615  WARN [Worker-39] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:35:31,803  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:35:31,803  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:35:40,670  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:35:40,671  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:38:01,585  WARN [Worker-38] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:38:01,585  WARN [Worker-38] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:38:19,510  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:38:19,511  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:39:30,385  WARN [Worker-17] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:39:30,386  WARN [Worker-17] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:41:15,158  WARN [Worker-43] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:41:15,158  WARN [Worker-43] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:41:15,811 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 19:41:21,508  WARN [Worker-43] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:41:21,508  WARN [Worker-43] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:42:43,247  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:42:43,248  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:51:27,546 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 19:51:27,546 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 19:51:27,546 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 19:51:52,828  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:51:52,828  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:54:27,335  WARN [Worker-51] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:54:27,335  WARN [Worker-51] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:54:45,797  WARN [Worker-36] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:54:45,797  WARN [Worker-36] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:57:28,589  WARN [Worker-49] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:57:28,592  WARN [Worker-49] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:57:32,531  WARN [Worker-49] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:57:32,531  WARN [Worker-49] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:57:35,536  WARN [Worker-47] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:57:35,537  WARN [Worker-47] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:57:52,552  WARN [Worker-54] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:57:52,553  WARN [Worker-54] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:58:39,959  WARN [Worker-52] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:58:39,960  WARN [Worker-52] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:58:48,116  WARN [Worker-52] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:58:48,116  WARN [Worker-52] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:59:01,617  WARN [Worker-53] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:59:01,618  WARN [Worker-53] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:59:03,207  WARN [Worker-49] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:59:03,209  WARN [Worker-49] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:59:06,019  WARN [Worker-49] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:59:06,019  WARN [Worker-49] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:59:08,466  WARN [Worker-53] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:59:08,467  WARN [Worker-53] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 19:59:13,190  WARN [Worker-52] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 19:59:13,190  WARN [Worker-52] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:00:58,362  WARN [Worker-51] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:00:58,362  WARN [Worker-51] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:04:06,854  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:04:06,854  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:04:10,406  WARN [Worker-47] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:04:10,407  WARN [Worker-47] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:04:12,889  WARN [Worker-47] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:04:12,889  WARN [Worker-47] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:04:42,523  WARN [Worker-54] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:04:42,523  WARN [Worker-54] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:04:52,795  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:04:52,795  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:05:02,604  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:05:02,604  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:05:21,261  WARN [Worker-56] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:05:21,261  WARN [Worker-56] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:05:23,714  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:05:23,714  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:07:11,939  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:07:11,939  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:07:37,087  WARN [Worker-59] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:07:37,087  WARN [Worker-59] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:08:06,101  WARN [Worker-56] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:08:06,102  WARN [Worker-56] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:12:13,634  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:12:13,634  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:12:28,849  WARN [Worker-55] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:12:28,849  WARN [Worker-55] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:16:09,586  WARN [Worker-62] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:16:09,586  WARN [Worker-62] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:17:35,989 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:17:35,989 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:17:35,990 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:17:36,906  WARN [Worker-63] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:17:36,907  WARN [Worker-63] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:18:24,940  WARN [Worker-62] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:18:24,940  WARN [Worker-62] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:19:22,452  WARN [Worker-63] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:19:22,452  WARN [Worker-63] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:19:24,671  WARN [Worker-63] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:19:24,673  WARN [Worker-63] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:19:56,605  WARN [Worker-63] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:19:56,605  WARN [Worker-63] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:23:18,610  WARN [Worker-69] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:23:18,611  WARN [Worker-69] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:25:23,180  WARN [Worker-69] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:25:23,180  WARN [Worker-69] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:28:04,903  WARN [Worker-62] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:28:04,903  WARN [Worker-62] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:29:37,715 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:29:37,716 ERROR [Text Viewer Hover Presenter] - IScalaPresentationCompiler$ - Ignoring InterruptException
+2016-11-26 20:30:36,249  WARN [Worker-62] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:30:36,250  WARN [Worker-62] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:30:45,098  WARN [Worker-75] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:30:45,098  WARN [Worker-75] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:34:30,033  WARN [Worker-74] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:34:30,033  WARN [Worker-74] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:34:34,121  WARN [Worker-78] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:34:34,122  WARN [Worker-78] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:35:48,233  WARN [Worker-78] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:35:48,233  WARN [Worker-78] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:35:51,511  WARN [Worker-74] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:35:51,511  WARN [Worker-74] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:36:12,017  WARN [Worker-73] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:36:12,017  WARN [Worker-73] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:48:37,776  WARN [Worker-84] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:48:37,783  WARN [Worker-84] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:48:59,073  WARN [Worker-87] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:48:59,073  WARN [Worker-87] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:49:17,052  WARN [Worker-86] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:49:17,059  WARN [Worker-86] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:49:23,476  WARN [Worker-86] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:49:23,477  WARN [Worker-86] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:49:35,968  WARN [Worker-87] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:49:35,968  WARN [Worker-87] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:49:42,849  WARN [Worker-88] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:49:42,852  WARN [Worker-88] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:51:03,353  WARN [Worker-88] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:51:03,353  WARN [Worker-88] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:51:19,413  WARN [Worker-86] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:51:19,413  WARN [Worker-86] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:51:51,742  WARN [Worker-88] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:51:51,742  WARN [Worker-88] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:51:57,659  WARN [Worker-91] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:51:57,659  WARN [Worker-91] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:52:30,130  WARN [Worker-89] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:52:30,130  WARN [Worker-89] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:53:40,099  WARN [Worker-92] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:53:40,099  WARN [Worker-92] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:54:24,381  WARN [Worker-88] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:54:24,381  WARN [Worker-88] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:55:48,287  WARN [Worker-89] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:55:48,288  WARN [Worker-89] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:56:31,731  WARN [Worker-94] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:56:31,732  WARN [Worker-94] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:56:50,720  WARN [Worker-95] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:56:50,720  WARN [Worker-95] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 20:58:41,500  WARN [Worker-95] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 20:58:41,500  WARN [Worker-95] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:00:37,609  WARN [Worker-92] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:00:37,609  WARN [Worker-92] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:00:40,590  WARN [Worker-98] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:00:40,591  WARN [Worker-98] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:03:54,328  WARN [Worker-101] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:03:54,328  WARN [Worker-101] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:04:19,951  WARN [Worker-102] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:04:19,952  WARN [Worker-102] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:06:35,884  WARN [Worker-99] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:06:35,884  WARN [Worker-99] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:06:54,585  WARN [Worker-103] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:06:54,585  WARN [Worker-103] - ScalaProject - Project expertoDebuug runs on platform default installation.
+2016-11-26 21:07:23,624  WARN [Worker-103] - ScalaProject - Project expertoDebuug has platform default sourceLevel.
+2016-11-26 21:07:23,626  WARN [Worker-103] - ScalaProject - Project expertoDebuug runs on platform default installation.

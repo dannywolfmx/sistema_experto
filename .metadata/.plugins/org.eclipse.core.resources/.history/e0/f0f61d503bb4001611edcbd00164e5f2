@@ -1,0 +1,9 @@
+object Main{
+    var mt = new MemoriaTrabajo()
+    var mc = new ModuloConocimiento("Animales","zoo.bc")
+    var mi = mi=new MotorInferencia();
+  
+    def main(args:Array[String]){
+        
+    }
+}
