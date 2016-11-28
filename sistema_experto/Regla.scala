@@ -1,3 +1,4 @@
+package experto
 import scala.collection.mutable
 
 class Regla(){

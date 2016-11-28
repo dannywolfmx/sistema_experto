@@ -1,3 +1,4 @@
+package experto
 import scala.io.{Source,BufferedSource}
 
 class LectorArch{

@@ -20,7 +20,7 @@
  * Migracion a Scala: Daniel Menchaca Luna
  *
  */
-
+package experto
 
 
 class Atomo extends ParteRegla {

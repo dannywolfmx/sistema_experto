@@ -1,7 +1,0 @@
-object Main{
-    var mt = new MemoriaTrabajo()
-  
-    def main(args:Array[String]){
-        
-    }
-}

@@ -19,7 +19,7 @@
  * Hora: 07:17 a.m.
  * 
  */
-
+package experto
 import scala.collection.mutable
 
  class MotorInferencia(){
@@ -47,7 +47,7 @@ import scala.collection.mutable
                         // Verificacion de certidumbre: [0,1] elem R
                         aa.Estado = resConsulta;
                         try{
-
+                            mt.guardaAtomo(new Atomo(aa))
                         }catch{
                             case as:AtomoDuplicado => println("Se duplico el atomo: {0}",aa)
                             // Hacer nada...

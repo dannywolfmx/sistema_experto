@@ -16,5 +16,5 @@
  * Hora: 07:52 a.m.
  * 
  */
-
+package experto
  class ParteRegla{}
