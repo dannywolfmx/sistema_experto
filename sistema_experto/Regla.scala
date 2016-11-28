@@ -1,4 +1,3 @@
-package experto
 import scala.collection.mutable
 
 class Regla(){
@@ -76,12 +75,14 @@ class Regla(){
             // El nivel de certidumbre que se reciba
             // se asigna a los �tomos conclusi�n
             // que se ingresar�n a la MT.
-            if ( elemConc.isInstanceOf[Atomo]){
+            if ( elemConc.asInstanceOf[ParteRegla].isInstanceOf[Atomo]){
                 aTmp = new Atomo ( elemConc.asInstanceOf[Atomo] )
                 atomos += aTmp
-                if ( aTmp.Objetivo ) llegoObj = true; 
+                if ( aTmp.Objetivo ) {
+                  llegoObj = true; 
+                }
             }
-            else if ( elemConc.isInstanceOf[Negacion]){
+            else if ( elemConc.asInstanceOf[ParteRegla].isInstanceOf[Negacion]){
                 aTmp.Estado = !aTmp.Estado
             }
         }
@@ -123,6 +124,7 @@ class Regla(){
                         objetivo = true;
                     }
                     case "</atomoObj>" =>{
+                                                
                         atomo = false
                         obj = false
                     }
@@ -164,6 +166,7 @@ class Regla(){
                     }
                     case _ =>{
                         if(atomo){
+
                             var pr = new Atomo(parte,true,obj)
                             if (cond && !conc && !obj){
                                 partesCond += pr

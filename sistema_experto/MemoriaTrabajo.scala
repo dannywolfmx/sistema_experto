@@ -22,7 +22,7 @@
  * Hora: 05:39 p.m.
  * 
  */
-package experto
+
  //Importar Paquetes de coleccion mutable
 import scala.collection.mutable
 
@@ -32,8 +32,13 @@ class MemoriaTrabajo(){
     
     //Guardar los atomos
     def guardaAtomo( aa:Atomo  ) : Unit = {
-        if ( !afirmados.contains( aa ) && negados.contains( aa ) ){
-            if ( aa.Estado ) afirmados += aa else negados += aa
+        if ( !afirmados.contains( aa ) && !negados.contains( aa ) ){
+            if ( aa.Estado ) {
+              afirmados += aa
+
+            } else {
+              negados += aa
+            }
         } 
         else {
             throw new AtomoDuplicado( aa.Desc );
@@ -44,7 +49,7 @@ class MemoriaTrabajo(){
         var aTmp:Atomo  = new Atomo( aa );
         aTmp.Estado = !aTmp.Estado;
 
-        ( afirmados.contains( aa ) || negados.contains( aa ) ||
+        return ( afirmados.contains( aa ) || negados.contains( aa ) ||
 			        afirmados.contains( aTmp ) || negados.contains( aTmp ) )   
     }
 

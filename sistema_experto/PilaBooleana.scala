@@ -1,4 +1,4 @@
-package experto
+
 import scala.collection.mutable
 
 class PilaBooleana(){
@@ -15,18 +15,23 @@ class PilaBooleana(){
     }
 
     def top:Boolean = {
-        if ( vacia ) datos(datos.size).asInstanceOf[Boolean] else false
+        if ( !vacia ) {
+          datos(datos.size - 1).asInstanceOf[Boolean]
+        } else {
+          false
+        }
     }
 
     def pop:Boolean = {
         var tmp:Boolean = false
 
-        if (vacia){
-            return false
-        }else{
-            tmp = datos(datos.size -1).asInstanceOf[Boolean]
+        if (!vacia){
+          tmp = datos(datos.size -1).asInstanceOf[Boolean]
             datos.remove(datos.size - 1)
             return tmp;
+            
+        }else{
+            return false
         }
     }
 

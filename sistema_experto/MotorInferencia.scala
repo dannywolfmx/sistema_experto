@@ -19,7 +19,7 @@
  * Hora: 07:17 a.m.
  * 
  */
-package experto
+
 import scala.collection.mutable
 
  class MotorInferencia(){
@@ -30,7 +30,7 @@ import scala.collection.mutable
          var aa:Atomo = null
          var resConsulta:Boolean = false
          var resCondicion:Boolean = false
-         
+
          for ( elemento <- mc.bc ){
              ra = elemento.asInstanceOf[ Regla ]
 
@@ -48,8 +48,9 @@ import scala.collection.mutable
                         aa.Estado = resConsulta;
                         try{
                             mt.guardaAtomo(new Atomo(aa))
+                            println(mt)
                         }catch{
-                            case as:AtomoDuplicado => println("Se duplico el atomo: {0}",aa)
+                            case as:AtomoDuplicado => println("Se duplico el atomo: " + aa)
                             // Hacer nada...
                         }
                     }
@@ -58,16 +59,13 @@ import scala.collection.mutable
              }
 
              resCondicion = ra.probarCondicion( mt )
-
              if ( resCondicion ){
                  println( "Se disparo: " + ra )
-                // Antes de llamar a ra.dispara(mt)
-				// calcular certidumbre del resultado.
-				// Deberia enviarse como otro parimetro.
                 ra.dispara( mt )
-                //println( mt )
                 resCondicion = false
-                if ( ra.esObjetivo() ) return ra.partesConc
+                if ( ra.esObjetivo() ) {
+                  return ra.partesConc
+                }
              }
              else{
                 // Este es uno de los interruptores del SE
@@ -109,11 +107,13 @@ import scala.collection.mutable
                  atomosConc += aTmp
              }
 
-             if ( aa.isInstanceOf[Atomo] ) aTmp.Estado = !aTmp.Estado;
+             if ( aa.isInstanceOf[Negacion] ) aTmp.Estado = !aTmp.Estado;
          }
 
          for ( aa <- atomosConc ){
-             if ( porSatisfacer.contains( aa ) ) return true;
+             if ( porSatisfacer.contains( aa.asInstanceOf[Atomo] ) ){
+               return true;
+             }
          }
          return false;
      }
@@ -163,13 +163,12 @@ import scala.collection.mutable
 
                  mcTmp = new ModuloConocimiento(nomBCPrima)
                  //Bootstrap!!!
-                 concatena(aSatisfacer,( reglasObj(pos).asInstanceOf[ Regla ] ).partesCond);
+                 concatena(aSatisfacer,( reglasObj(pos).asInstanceOf[ Regla ] ).partesConc);
                      do{
                          salir = true
                          for (ra <- mc.bc){
                              if ( !ra.asInstanceOf[Regla].marca && esElegible( ra.asInstanceOf[Regla],aSatisfacer ) ){
                                  salir = false;
-                                 println( "Elegida: " + ra )
                                  ra.asInstanceOf[Regla].marca = true;
                                  concatena( aSatisfacer , ra.asInstanceOf[Regla].partesCond )
                                  bcPrima.prepend(ra)
@@ -181,9 +180,11 @@ import scala.collection.mutable
                      mcTmp.bc = bcPrima
                      println( "Intentando con: \n" + mcTmp )
                      resultado = encadenarAdelante(mcTmp,mt)
+                     println(".................................. ENTRE --------- INICIO" + resultado)
+
                      if ( resultado != null ){
+                         println(".................................. ENTRE --------- FIN")
                          backward = false
-                         println("Entregue resultado")
                          return resultado
                      }
                  }

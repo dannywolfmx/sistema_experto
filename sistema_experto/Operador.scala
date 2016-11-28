@@ -20,7 +20,7 @@
  * Hora: 07:53 a.m.
  * 
  */
-package experto
+
 class Operador() extends ParteRegla{
 
 }

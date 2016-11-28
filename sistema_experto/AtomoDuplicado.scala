@@ -16,9 +16,6 @@
  * Hora: 05:44 p.m.
  * 
  */
-
-package experto
-
 case class AtomoDuplicado(s:String) extends Exception(s){
 
 }

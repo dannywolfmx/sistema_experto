@@ -22,15 +22,14 @@
  * Hora: 06:42 a.m.
  * 
  */
-package experto
+
  object Consultar{
      def porAtomo(aa:Atomo,ra:Regla):Boolean = {
          var resp:String= null
          do{
 
              println("Se cumple " + aa.Desc + "? (S/N/P)"  );
-             //resp = scala.io.StdIn.readLine();
-             resp = "S"
+             resp = scala.io.StdIn.readLine();
              resp = resp.toUpperCase()
              println(resp)
              if (resp.equals("P")){
