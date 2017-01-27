@@ -14,6 +14,7 @@
  * Desarrollador: Luis Alberto Casillas Santill�n
  * Fecha: 26/10/2006
  * Hora: 07:52 a.m.
+ * Migracion a Scala: Daniel Menchaca Luna
  * 
  */
 

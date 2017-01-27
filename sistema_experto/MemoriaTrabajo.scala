@@ -21,6 +21,7 @@
  * Fecha: 28/10/2006
  * Hora: 05:39 p.m.
  * 
+ * Migracion a Scala: Daniel Menchaca Luna
  */
 
  //Importar Paquetes de coleccion mutable

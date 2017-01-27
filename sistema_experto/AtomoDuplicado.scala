@@ -14,6 +14,7 @@
  * Desarrollador: Luis Alberto Casillas Santill�n
  * Fecha: 28/10/2006
  * Hora: 05:44 p.m.
+ * Migracion a Scala: Daniel Menchaca Luna
  * 
  */
 case class AtomoDuplicado(s:String) extends Exception(s){

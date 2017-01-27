@@ -180,10 +180,8 @@ import scala.collection.mutable
                      mcTmp.bc = bcPrima
                      println( "Intentando con: \n" + mcTmp )
                      resultado = encadenarAdelante(mcTmp,mt)
-                     println(".................................. ENTRE --------- INICIO" + resultado)
 
                      if ( resultado != null ){
-                         println(".................................. ENTRE --------- FIN")
                          backward = false
                          return resultado
                      }
